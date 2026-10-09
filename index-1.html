@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#07111f">
+<title>NeuralWaves.AI — Inteligencia aplicada</title>
+<meta name="description" content="NeuralWaves.AI es un estudio independiente de Costa Rica que desarrolla aplicaciones con inteligencia artificial para finanzas, educación, salud y productividad.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NeuralWaves.AI — Intelligence beyond data">
+<meta property="og:description" content="Un ecosistema de productos especializados, diseñados y desarrollados desde Costa Rica.">
+<meta property="og:url" content="https://ariasrodolfo075-wq.github.io/Neuralwaves-ai/">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #07111f;
+  --panel: #0c1b2e;
+  --line: rgba(169,195,225,.15);
+  --text: #f2f6fc;
+  --muted: #a7b6c9;
+  --gold: #e8bd62;
+  --blue: #63b3ff;
+  --mint: #91e0d0;
+  --max: 1160px;
+  --radius: 22px;
+  --shadow: 0 24px 80px rgba(0,0,0,.25);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse at 75% 2%, rgba(40,112,177,.18), transparent 34%),
+    radial-gradient(ellipse at 8% 30%, rgba(232,189,98,.07), transparent 30%),
+    linear-gradient(180deg, #07111f 0%, #091626 56%, #07111f 100%);
+}
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+button { font: inherit; }
+.wrap { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--gold); font-size: .73rem; font-weight: 700;
+  letter-spacing: .17em; text-transform: uppercase;
+}
+.eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+h1, h2, h3 { font-family: "Space Grotesk", system-ui, sans-serif; letter-spacing: -.045em; }
+h1 { font-size: clamp(3rem, 7.2vw, 6.4rem); line-height: .99; font-weight: 600; max-width: 850px; margin: 24px 0; }
+h2 { font-size: clamp(2.1rem, 4vw, 3.7rem); line-height: 1.08; font-weight: 500; margin: 0 0 18px; }
+h3 { font-size: 1.35rem; line-height: 1.2; margin: 0 0 10px; }
+p { margin-top: 0; }
+.lead { color: #c0cddd; font-size: clamp(1.05rem, 1.8vw, 1.23rem); max-width: 680px; line-height: 1.8; }
+.muted { color: var(--muted); }
+.site-header { position: sticky; top: 0; z-index: 20; background: rgba(7,17,31,.86); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(169,195,225,.1); }
+.nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; font-family: "Space Grotesk", sans-serif; font-size: 1.06rem; font-weight: 700; letter-spacing: -.04em; white-space: nowrap; }
+.brand-mark {
+  width: 38px; height: 38px; display: grid; place-items: center;
+  border: 1px solid rgba(232,189,98,.55); border-radius: 12px;
+  background: linear-gradient(145deg, rgba(99,179,255,.16), rgba(232,189,98,.08));
+  color: var(--gold); font-size: .9rem; position: relative; overflow: hidden;
+}
+.brand-mark::after { content: ""; position: absolute; width: 24px; height: 24px; border: 1px solid rgba(99,179,255,.6); border-radius: 50%; transform: translate(7px,-7px); }
+.brand .ai { color: var(--gold); }
+.nav-links { display: flex; align-items: center; gap: 26px; color: #c0ccdc; font-size: .88rem; }
+.nav-links a:hover { color: #fff; }
+.nav-cta, .button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 0 19px; border: 1px solid rgba(232,189,98,.55);
+  border-radius: 999px; color: #101722; background: var(--gold);
+  font-weight: 700; font-size: .9rem; cursor: pointer;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.nav-cta:hover, .button:hover { transform: translateY(-2px); background: #f2d18a; }
+.button.secondary { background: rgba(255,255,255,.025); color: var(--text); border-color: var(--line); }
+.button.secondary:hover { border-color: rgba(99,179,255,.65); background: rgba(99,179,255,.08); }
+.hero { padding: 92px 0 82px; position: relative; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(260px,.75fr); gap: 50px; align-items: center; }
+.hero-copy { position: relative; z-index: 1; }
+.hero h1 .accent { background: linear-gradient(100deg,#fff 10%,#b7d8ff 52%,var(--gold) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .lead { margin-bottom: 30px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.trustline { display: flex; align-items: center; gap: 12px; color: #92a5bc; font-size: .82rem; margin-top: 30px; }
+.trustline span { width: 6px; height: 6px; background: var(--mint); border-radius: 50%; box-shadow: 0 0 15px rgba(145,224,208,.7); }
+.hero-art { min-height: 420px; display: grid; place-items: center; position: relative; }
+.orbit {
+  width: min(100%,410px); aspect-ratio: 1; border: 1px solid rgba(99,179,255,.18);
+  border-radius: 50%; display: grid; place-items: center; position: relative;
+  background: radial-gradient(circle at 50% 48%,rgba(47,105,158,.18),transparent 60%);
+}
+.orbit::before, .orbit::after { content: ""; position: absolute; border: 1px solid rgba(232,189,98,.16); border-radius: 50%; inset: 11%; transform: rotate(-28deg) scaleX(.7); }
+.orbit::after { inset: 1%; transform: rotate(36deg) scaleX(.68); border-color: rgba(99,179,255,.18); }
+.core-logo {
+  width: 61%; aspect-ratio: 1; border-radius: 28%; position: relative; z-index: 1;
+  display: grid; place-items: center; overflow: hidden;
+  background: linear-gradient(145deg,rgba(12,35,58,.96),rgba(6,16,30,.96));
+  border: 1px solid rgba(232,189,98,.28); box-shadow: 0 0 70px rgba(61,139,212,.18);
+}
+.core-logo svg { width: 84%; height: 84%; overflow: visible; }
+.float-tag { position: absolute; z-index: 2; padding: 10px 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(8,22,39,.9); box-shadow: var(--shadow); font-size: .77rem; color: #d6e1ef; backdrop-filter: blur(10px); }
+.float-tag strong { display: block; font-family: "Space Grotesk",sans-serif; font-size: .94rem; color: #fff; }
+.tag-top { top: 13%; right: -2%; } .tag-bottom { bottom: 13%; left: -2%; }
+.section { padding: 92px 0; border-top: 1px solid rgba(169,195,225,.09); }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 34px; }
+.section-head > div { max-width: 720px; }
+.section-head p { max-width: 460px; margin-bottom: 5px; }
+.product-grid { display: grid; grid-template-columns: repeat(6,minmax(0,1fr)); gap: 16px; }
+.product-card {
+  grid-column: span 2; position: relative; display: flex; flex-direction: column; min-height: 292px;
+  padding: 25px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: linear-gradient(145deg,rgba(16,36,59,.88),rgba(9,24,41,.82));
+  transition: transform .25s ease, border-color .25s ease, background .25s ease; overflow: hidden;
+}
+.product-card:nth-child(4) { grid-column: 2/span 2; }
+.product-card:hover { transform: translateY(-5px); border-color: rgba(99,179,255,.42); background: linear-gradient(145deg,rgba(20,46,74,.95),rgba(9,24,41,.92)); }
+.product-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 25px; }
+.product-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px; border: 1px solid rgba(99,179,255,.23); background: rgba(99,179,255,.08); color: var(--blue); font-family: "Space Grotesk",sans-serif; font-weight: 700; }
+.status { font-size: .68rem; letter-spacing: .07em; text-transform: uppercase; color: #c4d1e0; border: 1px solid rgba(169,195,225,.18); border-radius: 999px; padding: 5px 9px; white-space: nowrap; }
+.product-card p { color: var(--muted); font-size: .93rem; line-height: 1.7; margin-bottom: 24px; }
+.card-link { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; color: var(--gold); font-size: .88rem; font-weight: 700; border: 0; padding: 0; background: transparent; cursor: pointer; text-align: left; }
+.card-link span { transition: transform .2s; } .product-card:hover .card-link span { transform: translateX(4px); }
+.manifesto { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
+.manifesto h2 { max-width: 430px; }
+.manifesto-copy { padding-top: 5px; }
+.manifesto-copy p { color: #bdcadd; font-size: 1.04rem; line-height: 1.9; }
+.pillars { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 35px; }
+.pillar { padding: 20px; border-top: 1px solid rgba(232,189,98,.48); background: linear-gradient(180deg,rgba(232,189,98,.055),transparent); border-radius: 0 0 14px 14px; }
+.pillar .num { font-family: "Space Grotesk",sans-serif; color: var(--gold); font-size: .8rem; letter-spacing: .12em; }
+.pillar h3 { font-size: 1.05rem; margin: 12px 0 8px; letter-spacing: -.02em; }
+.pillar p { font-size: .87rem; color: var(--muted); margin: 0; line-height: 1.7; }
+.founder-panel { display: grid; grid-template-columns: .65fr 1.35fr; gap: 48px; padding: clamp(26px,5vw,56px); border: 1px solid var(--line); border-radius: 28px; background: radial-gradient(ellipse at 0 0,rgba(99,179,255,.11),transparent 55%),linear-gradient(135deg,rgba(14,32,53,.95),rgba(8,20,35,.95)); }
+.founder-mark { display: flex; align-items: center; gap: 14px; color: var(--gold); font-family: "Space Grotesk",sans-serif; font-size: 1rem; font-weight: 600; }
+.founder-mark::before { content: "RA"; width: 58px; height: 58px; display: grid; place-items: center; border: 1px solid rgba(232,189,98,.5); border-radius: 18px; background: rgba(232,189,98,.07); font-size: 1.1rem; }
+.founder-panel h2 { font-size: clamp(2rem,3vw,3rem); }
+.founder-panel p { color: #c0cddd; line-height: 1.85; }
+.contact { padding: 86px 0 100px; text-align: center; }
+.contact-inner { max-width: 800px; margin: auto; padding: clamp(28px,5vw,58px); border: 1px solid rgba(99,179,255,.2); border-radius: 30px; background: radial-gradient(ellipse at 50% 0,rgba(99,179,255,.12),transparent 60%),#0a192a; }
+.contact h2 { margin-inline: auto; max-width: 650px; }
+.contact .lead { margin: 0 auto 26px; }
+footer { border-top: 1px solid var(--line); padding: 25px 0 34px; color: #879bb3; font-size: .8rem; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.footer-links { display: flex; gap: 18px; flex-wrap: wrap; } .footer-links a:hover { color: #fff; }
+dialog { width: min(620px,calc(100% - 28px)); max-height: 85vh; overflow: auto; border: 1px solid rgba(99,179,255,.3); border-radius: 24px; padding: 0; background: #0b1b2e; color: var(--text); box-shadow: 0 30px 100px rgba(0,0,0,.6); }
+dialog::backdrop { background: rgba(2,8,15,.78); backdrop-filter: blur(8px); }
+.dialog-content { padding: clamp(24px,5vw,38px); }
+.dialog-content h3 { font-size: 2rem; margin-top: 16px; }
+.dialog-content .muted { line-height: 1.75; }
+.dialog-list { padding-left: 20px; color: #c3d0df; }
+.dialog-list li { margin: 10px 0; padding-left: 4px; }
+.dialog-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+@media (max-width:850px) {
+  .hero { padding-top: 68px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 25px; }
+  .hero-art { min-height: 330px; max-width: 480px; width: 100%; margin: 0 auto; }
+  .orbit { width: min(86%,360px); }
+  .tag-top { right: 0; } .tag-bottom { left: 0; }
+  .product-card { grid-column: span 3; }
+  .product-card:nth-child(4) { grid-column: span 3; }
+  .product-card:last-child { grid-column: 2/span 4; }
+  .manifesto { grid-template-columns: 1fr; gap: 20px; }
+  .founder-panel { grid-template-columns: 1fr; gap: 24px; }
+  .section-head { display: block; }
+  .section-head p { margin-top: 12px; }
+}
+@media (max-width:600px) {
+  .wrap { width: min(var(--max),calc(100% - 32px)); }
+  .nav { min-height: 68px; }
+  .nav-links { gap: 13px; font-size: .8rem; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-cta { min-height: 40px; padding: 0 13px; font-size: .8rem; }
+  .brand { font-size: .96rem; gap: 8px; }
+  .brand-mark { width: 34px; height: 34px; }
+  .hero { padding: 58px 0 64px; }
+  .hero h1 { font-size: clamp(2.8rem,13vw,4.4rem); }
+  .hero-art { min-height: 285px; }
+  .float-tag { font-size: .7rem; padding: 8px 10px; }
+  .float-tag strong { font-size: .82rem; }
+  .section { padding: 66px 0; }
+  .product-grid { display: grid; grid-template-columns: 1fr; gap: 13px; }
+  .product-card, .product-card:nth-child(4), .product-card:last-child { grid-column: auto; min-height: 245px; padding: 22px; }
+  .product-top { margin-bottom: 19px; }
+  .pillars { grid-template-columns: 1fr; gap: 8px; }
+  .pillar { padding: 17px; }
+  .founder-panel { padding: 25px; border-radius: 22px; }
+  .contact { padding: 65px 0 72px; }
+  .contact-inner { border-radius: 23px; }
+  .footer-row { align-items: flex-start; flex-direction: column; gap: 12px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Navegación principal">
+    <a class="brand" href="#inicio" aria-label="NeuralWaves.AI, inicio"><span class="brand-mark" aria-hidden="true">N</span><span>NeuralWaves<span class="ai">.AI</span></span></a>
+    <div class="nav-links"><a href="#ecosistema">Ecosistema</a><a href="#enfoque">Enfoque</a><a href="#fundador">Fundador</a><a class="nav-cta" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a></div>
+  </nav>
+</header>
+<main>
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Estudio independiente · Costa Rica</span>
+        <h1>Inteligencia aplicada.<br><span class="accent">Productos con propósito.</span></h1>
+        <p class="lead">Diseñamos y desarrollamos aplicaciones especializadas que conectan inteligencia artificial, ingeniería de software y necesidades concretas de las personas.</p>
+        <div class="actions"><a class="button" href="#ecosistema">Explorar el ecosistema <span aria-hidden="true">↓</span></a><a class="button secondary" href="#fundador">Conocer el proyecto</a></div>
+        <div class="trustline"><span aria-hidden="true"></span> Desarrollo independiente desde Costa Rica</div>
+      </div>
+      <div class="hero-art" aria-label="Identidad visual de NeuralWaves.AI">
+        <div class="orbit">
+          <div class="core-logo" role="img" aria-label="Símbolo visual de NeuralWaves.AI">
+            <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs><linearGradient id="waveBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#76c6ff"/><stop offset="1" stop-color="#2673d5"/></linearGradient><linearGradient id="waveGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe3a0"/><stop offset="1" stop-color="#d89b32"/></linearGradient></defs>
+              <circle cx="120" cy="120" r="91" fill="none" stroke="#4c83b8" stroke-opacity=".22" stroke-width="1.5"/>
+              <path d="M35 139 C65 67, 103 60, 139 108 S192 168, 208 91" fill="none" stroke="url(#waveBlue)" stroke-width="13" stroke-linecap="round"/>
+              <path d="M31 164 C66 117, 99 103, 129 133 S176 179, 211 124" fill="none" stroke="url(#waveGold)" stroke-width="10" stroke-linecap="round"/>
+              <path d="M49 83 C80 120, 108 150, 142 151 S183 125, 195 67" fill="none" stroke="#72baff" stroke-opacity=".72" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="120" cy="120" r="6" fill="#f7d78e"/>
+            </svg>
+          </div>
+        </div>
+        <div class="float-tag tag-top"><strong>AI · Engineering</strong>Inteligencia aplicada</div>
+        <div class="float-tag tag-bottom"><strong>Nexus Ecosystem</strong>Productos especializados</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ecosistema">
+    <div class="wrap">
+      <div class="section-head"><div><span class="eyebrow">El ecosistema</span><h2>Una visión. Distintas herramientas.</h2></div><p class="muted">Cada producto aborda un dominio diferente. La ambición común es convertir tecnología compleja en herramientas útiles, claras y accesibles.</p></div>
+      <div class="product-grid">
+        <article class="product-card"><div class="product-top"><div class="product-icon" aria-hidden="true">NF</div><span class="status">En desarrollo</span></div><h3>NexFin</h3><p>Analítica financiera, evaluación de riesgo y herramientas cuantitativas para explorar escenarios y apoyar decisiones.</p><button class="card-link" data-product="nexfin">Descubrir NexFin <span aria-hidden="true">→</span></button></article>
+        <article class="product-card"><div class="product-top"><div class="product-icon" aria-hidden="true">NE</div><span class="status">En desarrollo</span></div><h3>NexusEd</h3><p>Una experiencia educativa que une lenguaje, lectura, conocimiento y tutoría asistida por inteligencia artificial.</p><button class="card-link" data-product="nexused">Descubrir NexusEd <span aria-hidden="true">→</span></button></article>
+        <article class="product-card"><div class="product-top"><div class="product-icon" aria-hidden="true">NX</div><span class="status">En evolución</span></div><h3>NexusAI</h3><p>El concepto de asistente personal dentro del ecosistema: una interfaz para coordinar información y tareas.</p><button class="card-link" data-product="nexusai">Descubrir NexusAI <span aria-hidden="true">→</span></button></article>
+        <article class="product-card"><div class="product-top"><div class="product-icon" aria-hidden="true">NM</div><span class="status">En desarrollo</span></div><h3>NexusMed</h3><p>Herramientas de consulta farmacéutica y organización de información de medicamentos, con especial atención a la claridad.</p><button class="card-link" data-product="nexusmed">Descubrir NexusMed <span aria-hidden="true">→</span></button></article>
+        <article class="product-card"><div class="product-top"><div class="product-icon" aria-hidden="true">K</div><span class="status">En desarrollo</span></div><h3>AI Keyboard</h3><p>Escritura asistida, corrección, traducción y transformación de estilo integradas en la experiencia de escribir.</p><button class="card-link" data-product="keyboard">Descubrir AI Keyboard <span aria-hidden="true">→</span></button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="enfoque">
+    <div class="wrap manifesto">
+      <div><span class="eyebrow">Cómo pensamos</span><h2>La tecnología debe resolver algo real.</h2></div>
+      <div class="manifesto-copy"><p>NeuralWaves.AI es un estudio independiente que explora cómo la inteligencia artificial puede integrarse en productos especializados. El enfoque combina desarrollo de software, diseño de producto y atención al contexto de cada disciplina.</p><p>No buscamos añadir IA por moda. Buscamos construir herramientas con un propósito reconocible, una experiencia comprensible y una base técnica que pueda evolucionar con el tiempo.</p></div>
+    </div>
+    <div class="wrap pillars">
+      <article class="pillar"><span class="num">01 / INGENIERÍA</span><h3>Construir con criterio</h3><p>Arquitectura y decisiones técnicas al servicio del producto, no al revés.</p></article>
+      <article class="pillar"><span class="num">02 / ESPECIALIZACIÓN</span><h3>Una herramienta para cada reto</h3><p>Finanzas, educación, salud y productividad tienen necesidades diferentes.</p></article>
+      <article class="pillar"><span class="num">03 / EVOLUCIÓN</span><h3>Mejorar con evidencia</h3><p>Probar, validar y perfeccionar antes de prometer más de lo que existe.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="fundador">
+    <div class="wrap founder-panel">
+      <div><span class="eyebrow">El fundador</span><div class="founder-mark">Rodolfo Arias</div></div>
+      <div><h2>Una trayectoria técnica convertida en productos propios.</h2><p>Rodolfo Arias es desarrollador independiente y fundador de NeuralWaves.AI, en Costa Rica. Su trayectoria reúne más de dos décadas de experiencia tecnológica, desde hardware, servidores y sistemas hasta el desarrollo de aplicaciones y soluciones con inteligencia artificial.</p><p>El proyecto nace de una convicción: la experiencia práctica, la curiosidad y la disciplina de ingeniería pueden convertirse en productos útiles, construidos paso a paso y con una visión de largo plazo.</p></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="wrap contact-inner"><span class="eyebrow">Contacto y colaboración</span><h2>Las buenas ideas avanzan cuando encuentran a las personas adecuadas.</h2><p class="lead">¿Quieres conocer los proyectos, conversar sobre una colaboración o explorar una oportunidad? Conversemos.</p><a class="button" href="mailto:ariasrodolfo075@gmail.com?subject=Contacto%20NeuralWaves.AI">Escribir a NeuralWaves.AI <span aria-hidden="true">↗</span></a></div>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><div>© <span id="year">2026</span> NeuralWaves.AI · Costa Rica · Intelligence beyond data</div><div class="footer-links"><a href="#inicio">Volver arriba ↑</a><a href="mailto:ariasrodolfo075@gmail.com?subject=Contacto%20NeuralWaves.AI">Contacto</a></div></div></footer>
+
+<dialog id="product-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+  <div class="dialog-content"><span class="eyebrow">Producto del ecosistema</span><h3 id="dialog-title"></h3><p class="muted" id="dialog-description"></p><ul class="dialog-list" id="dialog-list"></ul><div class="dialog-actions"><a class="button" id="dialog-contact" href="mailto:ariasrodolfo075@gmail.com?subject=Consulta%20sobre%20NeuralWaves.AI">Consultar sobre este producto</a><button class="button secondary" type="button" id="dialog-close">Cerrar</button></div></div>
+</dialog>
+<script>
+"use strict";
+const products = {
+  nexfin: { name: "NexFin", description: "Plataforma en desarrollo para análisis financiero y herramientas cuantitativas.", features: ["Herramientas de análisis y visualización de riesgo.", "Exploración de escenarios y simulaciones cuantitativas.", "Conceptos de análisis de sensibilidad y apoyo a decisiones."] },
+  nexused: { name: "NexusEd", description: "Plataforma educativa en desarrollo que conecta lenguaje, lectura y aprendizaje asistido.", features: ["Diccionario enriquecido con contexto y relaciones entre conceptos.", "Tutor conversacional para acompañar el aprendizaje.", "Herramientas de escritura y exploración de contenidos."] },
+  nexusai: { name: "NexusAI", description: "Asistente personal y punto de encuentro de ideas para el ecosistema Nexus.", features: ["Interfaz de asistencia personal.", "Concepto orientado a organizar información y tareas.", "Evolución progresiva dentro del ecosistema."] },
+  nexusmed: { name: "NexusMed", description: "Proyecto en desarrollo centrado en consulta farmacéutica y organización de información de medicamentos.", features: ["Organización de datos y referencias de medicamentos.", "Diseño de herramientas de consulta para apoyar el trabajo informativo.", "La información clínica debe verificarse siempre con fuentes profesionales autorizadas."] },
+  keyboard: { name: "AI Keyboard", description: "Teclado con herramientas de escritura asistida para dispositivos Android.", features: ["Modos de escritura y transformación de estilo.", "Corrección y traducción asistidas.", "Diseñado para llevar herramientas de lenguaje al lugar donde se escribe."] }
+};
+const dialog = document.getElementById("product-dialog");
+const title = document.getElementById("dialog-title");
+const description = document.getElementById("dialog-description");
+const list = document.getElementById("dialog-list");
+const contact = document.getElementById("dialog-contact");
+
+document.querySelectorAll("[data-product]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const product = products[button.dataset.product];
+    if (!product) return;
+    title.textContent = product.name;
+    description.textContent = product.description;
+    list.replaceChildren();
+    product.features.forEach((feature) => {
+      const item = document.createElement("li");
+      item.textContent = feature;
+      list.appendChild(item);
+    });
+    contact.href = "mailto:ariasrodolfo075@gmail.com?subject=" + encodeURIComponent("Consulta sobre " + product.name);
+    dialog.showModal();
+  });
+});
+document.getElementById("dialog-close").addEventListener("click", () => dialog.close());
+dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+document.getElementById("year").textContent = String(new Date().getFullYear());
+</script>
+</body>
+</html>
