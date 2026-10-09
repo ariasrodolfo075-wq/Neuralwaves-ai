@@ -1,1 +1,1 @@
-# neuralwaves-ai-cr
+# Neuralwaves-ai
